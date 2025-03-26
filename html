@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Plants with Purpose</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        input[type="radio"] {
+            margin-left: 0; /* Reset any default margin */
+            margin-right: 5px; /* Space between radio button and label */
+        }
+        .radio-group label {
+            display: inline-block;
+            font-size: 1rem;
+            margin-right: 15px;
+        }
+        .submit-btn, .reset-btn {
+            width: 48%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .form-footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .thank-you-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Support Plants with Purpose</h1>
+</header>
+
+<div class="container" id="form-container">
+    <h2>Join the Movement</h2>
+    <p>
+        By signing up for Plants with Purpose, you're helping make the world a better place by:
+        <ul>
+            <li>Supporting environmental sustainability by planting trees.</li>
+            <li>Promoting community well-being and creating green spaces.</li>
+            <li>Contributing to wildlife preservation and biodiversity.</li>
+        </ul>
+        Your support makes a difference!
+    </p>
+
+    <form id="signup-form">
+        <div class="form-group">
+            <label for="first-name">First Name (required):</label>
+            <input type="text" id="first-name" name="first-name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="last-name">Last Name (required):</label>
+            <input type="text" id="last-name" name="last-name" required>
+        </div>
+
+        <div class="form-group radio-group">
+            <label>Sex (required):</label>
+            <input type="radio" id="male" name="sex" value="male" required> <label for="male">Male</label>
+            <input type="radio" id="female" name="sex" value="female" required> <label for="female">Female</label>
+            <input type="radio" id="prefer-not-to-say" name="sex" value="prefer-not-to-say" required> <label for="prefer-not-to-say">Prefer not to say</label>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address (required):</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contact-number">Contact Number (optional):</label>
+            <input type="text" id="contact-number" name="contact-number">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="submit-btn">
+            <input type="reset" value="Reset" class="reset-btn">
+        </div>
+    </form>
+
+    <div class="form-footer">
+        <p>Thank you for supporting Plants with Purpose!</p>
+    </div>
+</div>
+
+<div class="thank-you-message" id="thank-you-message">
+    <p>Thank you for supporting Plants with Purpose! Your contribution is helping make a positive impact.</p>
+</div>
+
+<script>
+    // Add an event listener to the form submission
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from actually submitting
+        
+        // Hide the form after submission
+        document.getElementById('form-container').style.display = 'none';
+        
+        // Show the thank-you message
+        document.getElementById('thank-you-message').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
